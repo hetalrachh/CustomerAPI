@@ -60,8 +60,8 @@ Update the maven project once and you will see the error is gone and oracle-18.3
 		spring: 
 		     datasource:
 			url: jdbc:oracle:thin:@localhost:1521/orclpdb
-			username: HR
-			password: hetal
+			username: <<your username>>
+			password: <<your password>>
 			driver-class-name: oracle.jdbc.OracleDriver
 			
 6. Login to your oracle db schema using sqlplus or any oracle IDE like SQlDeveloper. Create customers table and customer_seq as below.
