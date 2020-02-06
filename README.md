@@ -50,16 +50,18 @@ Update the maven project once and you will see the error is gone and oracle-18.3
 
 5. Create a new configuration file application.yml in src/main/resources folder and add below properties.
 
-        server:
-          port: 9090
+		#tomcat server port
+		server:
+		  port: 9090
 
-           ---
+		---
 
-        spring: 
-             datasource:
-                url: jdbc:oracle:thin:@localhost:1521/orclpdb
-                username: <<your username>>
-                password: <<your password>>
-                driver-class-name: oracle.jdbc.OracleDriver
+		#database config
+		spring: 
+		     datasource:
+			url: jdbc:oracle:thin:@localhost:1521/orclpdb
+			username: HR
+			password: hetal
+			driver-class-name: oracle.jdbc.OracleDriver
 
 
