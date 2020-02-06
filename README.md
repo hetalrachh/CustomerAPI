@@ -63,5 +63,43 @@ Update the maven project once and you will see the error is gone and oracle-18.3
 			username: HR
 			password: hetal
 			driver-class-name: oracle.jdbc.OracleDriver
+			
+6. Login to your oracle db schema using sqlplus or any oracle IDE like SQlDeveloper. Create customers table and customer_seq as below.
+customers table is used for storing customer data and customer_seq is used for 
+
+		--Customers table
+	        CREATE TABLE CUSTOMERS(
+		   id INTEGER NOT NULL PRIMARY KEY,
+		   firstname VARCHAR2(20) NOT NULL,
+		   lastname VARCHAR2(20) NOT NULL,
+		   age INTEGER NOT NULL,
+		   emailid VARCHAR2(20) NOT NULL
+		);
+
+		--customer sequence
+		CREATE SEQUENCE customer_seq
+		MINVALUE 1
+		MAXVALUE 99999999
+		START WITH 1
+		INCREMENT BY 1
+		CACHE 10;
+		
+7. REST API endpoints for customer -
+
+	a. Adding a new customer - 
+
+		@RequestMapping(value = "/customers/add", method = RequestMethod.POST)
+
+	b. Retrieving a customer based on its id -
+
+		@RequestMapping(value = "/customers/{id}", method = RequestMethod.GET)
+
+	c. Deleting a customer -
+
+	    @RequestMapping(value = "/customers/{id}", method = RequestMethod.DELETE)
+
+	d. Updating existing customer details - 
+
+	    @RequestMapping(value = "/customers/{id}", method = RequestMethod.PUT)
 
 
